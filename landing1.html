@@ -1,0 +1,1405 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Brew & Bean Cafe</title>
+
+    <style>
+
+        /* =========================
+           BASIC RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f1e9;
+            color: #2b211c;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #211712;
+            padding: 18px 7%;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 26px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #d49a52;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #d49a52;
+        }
+
+
+        /* =========================
+           HERO SECTION
+        ========================= */
+
+        .hero {
+            min-height: 90vh;
+
+            display: flex;
+            align-items: center;
+
+            padding: 80px 8%;
+
+            background:
+                linear-gradient(
+                    rgba(30, 20, 15, 0.78),
+                    rgba(30, 20, 15, 0.78)
+                ),
+                url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            color: white;
+        }
+
+        .hero-small {
+            color: #d49a52;
+            letter-spacing: 4px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .hero h1 {
+            font-size: 70px;
+            line-height: 1.1;
+            margin: 20px 0;
+        }
+
+        .hero h1 span {
+            color: #d49a52;
+        }
+
+        .hero-text {
+            max-width: 550px;
+            color: #e6ded6;
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #b87938;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 3px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #8d5728;
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           COMMON SECTION
+        ========================= */
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #b87938;
+            font-size: 13px;
+            letter-spacing: 3px;
+            font-weight: bold;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+            margin-top: 10px;
+        }
+
+        .section-title p {
+            max-width: 600px;
+            margin: 15px auto;
+            color: #6d625a;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            background: white;
+
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .about-image {
+            flex: 1;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-content span {
+            color: #b87938;
+            font-size: 13px;
+            letter-spacing: 3px;
+            font-weight: bold;
+        }
+
+        .about-content h2 {
+            font-size: 42px;
+            margin: 15px 0;
+        }
+
+        .about-content p {
+            color: #6d625a;
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================
+           FEATURES
+        ========================= */
+
+        .features {
+            background: #f7f1e9;
+        }
+
+        .feature-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .feature-card {
+            background: white;
+            text-align: center;
+            padding: 40px 25px;
+            border-bottom: 4px solid #b87938;
+            transition: 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .feature-icon {
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: #6d625a;
+        }
+
+
+        /* =========================
+           MENU
+        ========================= */
+
+        .menu-section {
+            background: #30221c;
+            color: white;
+        }
+
+        .menu-section .section-title p {
+            color: #cfc4bc;
+        }
+
+        .menu-container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .menu-category {
+            margin-bottom: 45px;
+        }
+
+        .menu-category h3 {
+            color: #d49a52;
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 0;
+
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .menu-item h4 {
+            font-size: 18px;
+        }
+
+        .menu-item p {
+            color: #bfb3aa;
+            font-size: 14px;
+        }
+
+        .price {
+            color: #d49a52;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+
+        /* =========================
+           GALLERY
+        ========================= */
+
+        .gallery {
+            background: white;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            height: 260px;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+
+        /* =========================
+           STATISTICS
+        ========================= */
+
+        .stats {
+            background: #b87938;
+            color: white;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;
+            gap: 20px;
+        }
+
+        .stat h2 {
+            font-size: 40px;
+        }
+
+        .stat p {
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           RESERVATION
+        ========================= */
+
+        .reservation {
+            background: #f7f1e9;
+        }
+
+        .reservation-box {
+            max-width: 750px;
+            margin: auto;
+            background: white;
+            padding: 45px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.07);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ddd;
+            outline: none;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            height: 130px;
+            resize: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #b87938;
+        }
+
+        .reservation-box button {
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            background: white;
+
+            display: flex;
+            gap: 60px;
+        }
+
+        .contact-info,
+        .contact-form {
+            flex: 1;
+        }
+
+        .contact-info h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info > p {
+            color: #6d625a;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            margin-bottom: 22px;
+        }
+
+        .contact-item h4 {
+            color: #b87938;
+            margin-bottom: 5px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            outline: none;
+            font-family: inherit;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: none;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #211712;
+            color: #ccc;
+            padding: 50px 8% 25px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+
+        .footer-box h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .footer-box p {
+            color: #aaa;
+            line-height: 1.7;
+        }
+
+        .footer-box ul {
+            list-style: none;
+        }
+
+        .footer-box ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-box ul li a {
+            color: #aaa;
+        }
+
+        .footer-box ul li a:hover {
+            color: #d49a52;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            color: #888;
+        }
+
+
+        /* =========================
+           RESPONSIVE DESIGN
+        ========================= */
+
+        @media(max-width: 900px) {
+
+            nav {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 50px;
+            }
+
+            .about,
+            .contact {
+                flex-direction: column;
+            }
+
+            .feature-container {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+
+        @media(max-width: 600px) {
+
+            header {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+
+            nav ul li a {
+                font-size: 12px;
+            }
+
+            .hero {
+                min-height: 75vh;
+                padding: 60px 6%;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            section {
+                padding: 65px 6%;
+            }
+
+            .section-title h2 {
+                font-size: 32px;
+            }
+
+            .about-image img {
+                height: 300px;
+            }
+
+            .gallery-container {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .reservation-box {
+                padding: 25px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                BREW<span>&</span>BEAN
+            </div>
+
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#reservation">Reservation</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="hero-small">
+                WELCOME TO BREW & BEAN
+            </p>
+
+            <h1>
+                Every Cup Has
+                <span>A Story.</span>
+            </h1>
+
+            <p class="hero-text">
+                Freshly roasted coffee, delicious food and
+                a peaceful atmosphere made for your perfect
+                moments.
+            </p>
+
+            <a href="#menu" class="btn">
+                Explore Our Menu
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section class="about" id="about">
+
+        <div class="about-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=900&q=80"
+                alt="Coffee Shop"
+            >
+
+        </div>
+
+        <div class="about-content">
+
+            <span>OUR STORY</span>
+
+            <h2>
+                More Than Just Coffee
+            </h2>
+
+            <p>
+                Brew & Bean started with a simple idea:
+                create a place where people can slow down,
+                enjoy great coffee and connect with each other.
+            </p>
+
+            <p>
+                From carefully selected beans to freshly
+                prepared food, everything we serve is created
+                with quality and passion.
+            </p>
+
+            <a href="#contact" class="btn">
+                Visit Us
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FEATURES
+    ========================== -->
+
+    <section class="features">
+
+        <div class="section-title">
+
+            <span>WHY CHOOSE US</span>
+
+            <h2>
+                Made With Love
+            </h2>
+
+            <p>
+                Everything we do is focused on giving you
+                a memorable cafe experience.
+            </p>
+
+        </div>
+
+
+        <div class="feature-container">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    ☕
+                </div>
+
+                <h3>
+                    Premium Coffee
+                </h3>
+
+                <p>
+                    Carefully selected and freshly roasted
+                    coffee beans.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🥐
+                </div>
+
+                <h3>
+                    Fresh Bakery
+                </h3>
+
+                <p>
+                    Delicious pastries and snacks prepared
+                    fresh every day.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🌿
+                </div>
+
+                <h3>
+                    Cozy Environment
+                </h3>
+
+                <p>
+                    A comfortable space to relax, work and
+                    meet your friends.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MENU
+    ========================== -->
+
+    <section class="menu-section" id="menu">
+
+        <div class="section-title">
+
+            <span>OUR MENU</span>
+
+            <h2>
+                Popular Favorites
+            </h2>
+
+            <p>
+                Discover our most loved coffee and bakery
+                selections.
+            </p>
+
+        </div>
+
+
+        <div class="menu-container">
+
+            <div class="menu-category">
+
+                <h3>☕ Coffee</h3>
+
+                <div class="menu-item">
+
+                    <div>
+                        <h4>Espresso</h4>
+                        <p>Strong and rich classic coffee</p>
+                    </div>
+
+                    <div class="price">
+                        ₹120
+                    </div>
+
+                </div>
+
+
+                <div class="menu-item">
+
+                    <div>
+                        <h4>Cappuccino</h4>
+                        <p>Espresso with steamed milk</p>
+                    </div>
+
+                    <div class="price">
+                        ₹180
+                    </div>
+
+                </div>
+
+
+                <div class="menu-item">
+
+                    <div>
+                        <h4>Cafe Latte</h4>
+                        <p>Smooth coffee with creamy milk</p>
+                    </div>
+
+                    <div class="price">
+                        ₹190
+                    </div>
+
+                </div>
+
+
+                <div class="menu-item">
+
+                    <div>
+                        <h4>Mocha</h4>
+                        <p>Coffee blended with chocolate</p>
+                    </div>
+
+                    <div class="price">
+                        ₹210
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="menu-category">
+
+                <h3>🥐 Bakery</h3>
+
+                <div class="menu-item">
+
+                    <div>
+                        <h4>Butter Croissant</h4>
+                        <p>Fresh crispy French pastry</p>
+                    </div>
+
+                    <div class="price">
+                        ₹140
+                    </div>
+
+                </div>
+
+
+                <div class="menu-item">
+
+                    <div>
+                        <h4>Chocolate Muffin</h4>
+                        <p>Soft muffin with chocolate</p>
+                    </div>
+
+                    <div class="price">
+                        ₹150
+                    </div>
+
+                </div>
+
+
+                <div class="menu-item">
+
+                    <div>
+                        <h4>Cheese Sandwich</h4>
+                        <p>Grilled sandwich with cheese</p>
+                    </div>
+
+                    <div class="price">
+                        ₹220
+                    </div>
+
+                </div>
+
+
+                <div class="menu-item">
+
+                    <div>
+                        <h4>Classic Pancakes</h4>
+                        <p>Fluffy pancakes with syrup</p>
+                    </div>
+
+                    <div class="price">
+                        ₹250
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         GALLERY
+    ========================== -->
+
+    <section class="gallery" id="gallery">
+
+        <div class="section-title">
+
+            <span>OUR GALLERY</span>
+
+            <h2>
+                A Taste of Brew & Bean
+            </h2>
+
+            <p>
+                Take a look at our coffee, food and cozy
+                cafe atmosphere.
+            </p>
+
+        </div>
+
+
+        <div class="gallery-container">
+
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=700&q=80"
+                    alt="Coffee"
+                >
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=700&q=80"
+                    alt="Coffee Cup"
+                >
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=700&q=80"
+                    alt="Cafe"
+                >
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=700&q=80"
+                    alt="Cafe Interior"
+                >
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=700&q=80"
+                    alt="Coffee Shop"
+                >
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=700&q=80"
+                    alt="Coffee Beans"
+                >
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         STATISTICS
+    ========================== -->
+
+    <section class="stats">
+
+        <div class="stat">
+            <h2>8+</h2>
+            <p>Years Experience</p>
+        </div>
+
+        <div class="stat">
+            <h2>25K+</h2>
+            <p>Happy Customers</p>
+        </div>
+
+        <div class="stat">
+            <h2>20+</h2>
+            <p>Coffee Varieties</p>
+        </div>
+
+        <div class="stat">
+            <h2>4.9</h2>
+            <p>Customer Rating</p>
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         RESERVATION
+    ========================== -->
+
+    <section class="reservation" id="reservation">
+
+        <div class="section-title">
+
+            <span>PLAN YOUR VISIT</span>
+
+            <h2>
+                Reserve Your Table
+            </h2>
+
+            <p>
+                Book your table and enjoy a relaxing coffee
+                experience with us.
+            </p>
+
+        </div>
+
+
+        <div class="reservation-box">
+
+            <form>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>
+                            Your Name
+                        </label>
+
+                        <input
+                            type="text"
+                            placeholder="Enter your name"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            placeholder="Enter your email"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>
+                            Date
+                        </label>
+
+                        <input type="date">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Guests
+                        </label>
+
+                        <select>
+
+                            <option>
+                                1 Person
+                            </option>
+
+                            <option>
+                                2 People
+                            </option>
+
+                            <option>
+                                3 People
+                            </option>
+
+                            <option>
+                                4 People
+                            </option>
+
+                            <option>
+                                5+ People
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Special Request
+                    </label>
+
+                    <textarea
+                        placeholder="Write your request..."
+                    ></textarea>
+
+                </div>
+
+
+                <button class="btn" type="submit">
+                    Book Table
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section class="contact" id="contact">
+
+        <div class="contact-info">
+
+            <h2>
+                Let's Talk Coffee
+            </h2>
+
+            <p>
+                Have a question, suggestion or simply want
+                to say hello? We would love to hear from you.
+            </p>
+
+
+            <div class="contact-item">
+
+                <h4>📍 Address</h4>
+
+                <p>
+                    24 Coffee Street, Ahmedabad, Gujarat
+                </p>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <h4>📞 Phone</h4>
+
+                <p>
+                    +91 98765 43210
+                </p>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <h4>✉ Email</h4>
+
+                <p>
+                    hello@brewandbean.com
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="contact-form">
+
+            <form>
+
+                <input
+                    type="text"
+                    placeholder="Your Name"
+                >
+
+                <input
+                    type="email"
+                    placeholder="Your Email"
+                >
+
+                <input
+                    type="text"
+                    placeholder="Subject"
+                >
+
+                <textarea
+                    placeholder="Your Message"
+                ></textarea>
+
+                <button class="btn" type="submit">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-box">
+
+                <h3>
+                    BREW<span>&</span>BEAN
+                </h3>
+
+                <p>
+                    Fresh coffee, delicious food and a cozy
+                    environment for everyone.
+                </p>
+
+            </div>
+
+
+            <div class="footer-box">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="#home">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+
+                    <li>
+                        <a href="#menu">Menu</a>
+                    </li>
+
+                    <li>
+                        <a href="#gallery">Gallery</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="footer-box">
+
+                <h3>
+                    Opening Hours
+                </h3>
+
+                <p>
+                    Monday - Friday
+                    <br>
+                    8:00 AM - 10:00 PM
+                </p>
+
+                <br>
+
+                <p>
+                    Saturday - Sunday
+                    <br>
+                    9:00 AM - 11:00 PM
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            <p>
+                © 2026 Brew & Bean. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
+```
